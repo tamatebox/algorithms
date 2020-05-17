@@ -3,10 +3,10 @@ using namespace std;
 
 int selectionSort(int A[], int N)
 {
-    int t, sw = 0, minj;
+    int sw = 0;
     for (int i = 0; i < N - 1; i++)
     {
-        minj = i;
+        int minj = i;
         for (int j = N - 1; j >= i + 1; j--)
         {
             minj = i;
@@ -16,7 +16,7 @@ int selectionSort(int A[], int N)
                     minj = j;
             }
         }
-        t = A[i];
+        int t = A[i];
         A[i] = A[minj];
         A[minj] = t;
         if (i != minj)
