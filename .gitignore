@@ -1,3 +1,4 @@
-./
-! *.cpp
-! .gitignore
+*
+!*/
+!*.*
+.DS_Store
