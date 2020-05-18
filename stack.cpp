@@ -9,37 +9,30 @@ using namespace std;
 
 const int MAX = 5000000;
 
-int s1[MAX];
+int S[MAX];
 int top = 0;
 
-bool stisEmpty()
+bool isEmpty()
 {
     return (top == 0);
 }
 
-bool stisFull()
+bool isFull()
 {
-    return (top == MAX);
+    return (top >= MAX - 1);
 }
 
-template <class T>
-void enqueue(T v)
+void push(int x)
 {
-    if (quisFull())
+    if (isFull())
         return;
-    q1[tail++] = v;
-    if (tail == MAX)
-        tail = 0;
+    S[++top] = x;
 }
 
-template <class T>
-T dequeue()
+int pop()
 {
-    if (quisEmpty())
-        return -1;
-    T res = q1[head];
-    ++head;
-    if (head == MAX)
-        head = 0;
-    return res;
+    if (isEmpty())
+        return;
+    top--;
+    return S[top + 1];
 }

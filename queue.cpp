@@ -9,7 +9,7 @@ using namespace std;
 
 const int MAX = 5000000;
 
-int q1[MAX], s1[MAX];
+int Q[MAX];
 int tail = 0, head = 0;
 
 bool quisEmpty()
@@ -27,7 +27,7 @@ void enqueue(T v)
 {
     if (quisFull())
         return;
-    q1[tail++] = v;
+    Q[tail++] = v;
     if (tail == MAX)
         tail = 0;
 }
@@ -37,7 +37,7 @@ T dequeue()
 {
     if (quisEmpty())
         return -1;
-    T res = q1[head];
+    T res = Q[head];
     ++head;
     if (head == MAX)
         head = 0;
